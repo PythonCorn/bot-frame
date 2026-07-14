@@ -1,0 +1,42 @@
+services:
+  nginx:
+    image: nginx:1.27-alpine
+    restart: always
+    volumes:
+      - ./infra/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+    ports:
+      - "8000:80"
+
+  app:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    expose:
+      - "8000"
+    volumes:
+      - .:/app
+    environment:
+      WATCHFILES_FORCE_POLLING: "true"
+
+    command: >
+      sh -c "
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+      --reload-dir /app/app
+      --reload-include '*.py'
+      "
+        
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: vpn_cloudflare
+    restart: unless-stopped
+    command: tunnel --config /etc/cloudflared/config.yml run
+    volumes:
+      - ./cloudflared:/etc/cloudflared:ro
+    depends_on:
+      - nginx
