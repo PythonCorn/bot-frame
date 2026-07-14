@@ -36,12 +36,14 @@ class Application(FastAPI):
             ),
         )
         if self.app_state.i18n_middleware is not None:
-            self.app_state.bot.dispatcher.update.middleware(
-                middleware=self.app_state.i18n_middleware
+            self.app_state.include_middleware(
+                self.app_state.i18n_middleware,
+                event="update"
             )
+
         if self.app_state.windows is not None:
-            self.app_state.bot.dispatcher.update.middleware(
-                middleware=WindowsMiddleware(
+            self.app_state.include_middleware(
+                WindowsMiddleware(
                     windows=self.app_state.windows,
                 )
             )
