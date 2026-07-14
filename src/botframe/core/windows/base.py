@@ -1,8 +1,18 @@
 from typing import TYPE_CHECKING, Any, Literal
 
 from aiogram.filters.callback_data import CallbackData
-from aiogram.types import ForceReply, ReplyKeyboardRemove, WebAppInfo, LoginUrl, SwitchInlineQueryChosenChat, \
-    CopyTextButton, CallbackGame, KeyboardButtonRequestUsers, KeyboardButtonRequestChat, KeyboardButtonPollType
+from aiogram.types import (
+    ForceReply,
+    ReplyKeyboardRemove,
+    WebAppInfo,
+    LoginUrl,
+    SwitchInlineQueryChosenChat,
+    CopyTextButton,
+    CallbackGame,
+    KeyboardButtonRequestUsers,
+    KeyboardButtonRequestChat,
+    KeyboardButtonPollType
+)
 from aiogram.utils.i18n import I18n
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 

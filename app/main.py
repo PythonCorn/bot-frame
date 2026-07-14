@@ -26,9 +26,5 @@ app = Application(app_state=app_state)
 
 @app_state.bot.dispatcher.message()
 async def catch(msg: Message, windows: Windows):
-    window = windows.hello.hi()
-    await msg.answer(
-        text=window.text,
-        reply_markup=window.reply_markup,
-    )
+    ...
 
