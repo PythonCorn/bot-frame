@@ -7,8 +7,6 @@ from aiogram.enums import ParseMode
 from aiogram.fsm.storage.base import BaseStorage
 from aiogram.types import InputFile
 
-from src.botframe.core.windows.container import WindowsContainer
-
 logger = logging.getLogger(__name__)
 
 

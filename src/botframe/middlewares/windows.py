@@ -4,7 +4,7 @@ from typing import Any
 from aiogram import BaseMiddleware
 from aiogram.types import TelegramObject
 
-from src.botframe.core.windows.container import WindowsContainer
+from botframe.core.windows.container import WindowsContainer
 
 
 class WindowsMiddleware(BaseMiddleware):

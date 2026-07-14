@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bot-frame"
+version = "0.1.0"
+description = "Framework for building aiogram bots with FastAPI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram>=3.29,<4",
+    "fastapi>=0.139,<1",
+    "pydantic>=2.13,<3",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/botframe"]

@@ -1,13 +1,12 @@
 from typing import Literal
 
 from aiogram import Router, BaseMiddleware
-from aiogram.utils.i18n import I18n
 from fastapi import Request
 from pydantic import BaseModel, ConfigDict
 
-from src.botframe.core.bot import TelegramBot
-from src.botframe.core.windows.container import WindowsContainer
-from src.botframe.middlewares.i18n import I18nMiddleware
+from botframe.core.bot import TelegramBot
+from botframe.core.windows.container import WindowsContainer
+from botframe.middlewares.i18n import I18nMiddleware
 
 
 class AppState(BaseModel):
