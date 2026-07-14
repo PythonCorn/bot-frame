@@ -176,8 +176,8 @@ class Window:
 class BaseWindows:
     def __init__(self, windows: "WindowsContainer"):
         self.windows = windows
-        self.i18n = windows.i18n
-        self.locale = windows.locale
+        self.i18n = windows._i18n
+        self.locale = windows._locale
 
     def window(
             self,
