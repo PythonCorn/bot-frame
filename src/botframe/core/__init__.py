@@ -1,3 +1,3 @@
-from src.botframe.core.app_state import AppState
-from src.botframe.core.application import Application
-from src.botframe.core.bot import TelegramBot
+from botframe.core.app_state import AppState
+from botframe.core.application import Application
+from botframe.core.bot import TelegramBot

@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from botframe.api import create_telegram_router
-from botframe import AppState
+from botframe.core.app_state import AppState
 from botframe.middlewares.windows import WindowsMiddleware
 
 logger = logging.getLogger(__name__)

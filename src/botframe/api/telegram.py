@@ -2,7 +2,7 @@ from typing import Any
 
 from fastapi import APIRouter, Request, status
 
-from botframe import AppState
+from botframe.core.app_state import AppState
 
 
 def create_telegram_router(app_state: AppState) -> APIRouter:

@@ -14,5 +14,16 @@ dependencies = [
     "pydantic>=2.13,<3",
 ]
 
+[project.optional-dependencies]
+i18n = [
+    "babel>=2.13,<3",
+]
+
+[project.scripts]
+botframe = "botframe.cli:main"
+
+[project.entry-points."babel.extractors"]
+botframe = "botframe.i18n.extractor:extract_botframe"
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/botframe"]
